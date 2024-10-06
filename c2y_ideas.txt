@@ -1,9 +1,11 @@
-* versioning
+* versioning a la Perl's `use`
+    https://news.ycombinator.com/item?id=24108109
 * byte
 * #ban / #disable
 * (#header NAME + #source NAME) or (#module NAME)
 * int<N>
 * [[restrict]]
+    https://www.lysator.liu.se/c/dmr-on-noalias.html
 * malloc_size() / malloc_usable_size() / HeapSize()
 * fat pointers and slices
     https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2529.pdf
@@ -41,3 +43,5 @@
         > Largely, yes. And thank you! I'm happy to review anything you
         > write as an early draft, if you'd like (you can always email
         > me at aaron@aaronballman.com)
+
+        (Alejandro also is interested)
