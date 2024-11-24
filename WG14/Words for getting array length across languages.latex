@@ -9,6 +9,7 @@
    includefoot
 ]{geometry}
 
+\usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{hyperref}
 
@@ -38,6 +39,12 @@
    urldate  = {2024-10-08},
    }
 
+   @misc{so-tags,
+   title    = {Tags - Stack Overflow},
+   url      = {https://stackoverflow.com/tags?tab=popular},
+   urldate  = {2024-11-15},
+   }
+
    @misc{tiobe,
    title    = {TIOBE Index},
    url      = {https://www.tiobe.com/tiobe-index/},
@@ -53,10 +60,17 @@
 
    @misc{github,
    author   = {GitHub},
-   title    = {GitHub Innovation Graph}
+   title    = {GitHub Innovation Graph},
    subtitle = {Programming languages},
    url      = {https://innovationgraph.github.com/global-metrics/programming-languages},
    urldate  = {2024-10-11},
+   }
+
+   @misc{godbolt,
+   author   = {Compiler Explorer},
+   title    = {supported languages},
+   url      = {https://godbolt.org/api/languages},
+   urldate  = {2024-11-15},
    }
 
    @misc{ada1,
@@ -99,9 +113,27 @@
    }
 
    @misc{cpp3,
+   title = {std::size, std::ssize - cppreference.com},
+   url = {https://en.cppreference.com/w/cpp/iterator/size},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{cpp4,
    title = {std::vector<T,Allocator>::capacity - cppreference.com},
    url = {https://en.cppreference.com/w/cpp/container/vector/capacity},
    urldate  = {2024-10-08},
+   }
+
+   @misc{cpp5,
+   title = {std::extent - cppreference.com},
+   url = {https://en.cppreference.com/w/cpp/types/extent},
+   urldate  = {2024-10-08},
+   }
+
+   @misc{cpp6,
+   title = {Compiler Explorer},
+   url = {https://godbolt.org/z/nEPKP79fY},
+   urldate  = {2024-11-21},
    }
 
    @misc{csharp1,
@@ -542,6 +574,12 @@
    urldate  = {2024-10-08},
    }
 
+   @misc{cobol3,
+   title    = {Compiler Explorer},
+   url      = {https://godbolt.org/z/KMMv58MoK},
+   urldate  = {2024-11-21},
+   }
+
    @misc{algol,
    title    = {ALGOL Programming Reference Manual, Volume 1: Basic Implementation - 86000098-519.pdf},
    url      = {https://public.support.unisys.com/aseries/docs/ClearPath-MCP-21.0/86000098-519/86000098-519.pdf},
@@ -706,7 +744,7 @@
    }
 
    @misc{gams1,
-   title    = {GAMS® Documentation Center}
+   title    = {GAMS® Documentation Center},
    subtitle = {Sets as Sequences: Ordered Sets},
    url      = {https://www.gams.com/latest/docs/index.html},
    urldate  = {2024-10-11},
@@ -762,7 +800,7 @@
    }
 
    @misc{common-lisp-2,
-   title = {The Common Lisp Cookbook},
+   title    = {The Common Lisp Cookbook},
    subtitle = {Data structures},
    url      = {https://lispcookbook.github.io/cl-cookbook/data-structures.html#sizes},
    urldate  = {2024-10-11},
@@ -775,7 +813,7 @@
    }
 
    @misc{racket,
-   title    = {Racket Documentation}
+   title    = {Racket Documentation},
    subtitle = {array: Generic and Dynamic Arrays},
    url      = {https://docs.racket-lang.org/array/index.html#%28def._%28%28lib._array%2Fmain..rkt%29._array-length%29%29},
    urldate  = {2024-10-11},
@@ -817,13 +855,175 @@
    urldate  = {2024-10-12},
    }
 
+   @misc{cfml,
+   title    = {CFML Reference},
+   subtitle = {ArrayLen},
+   url      = {https://helpx.adobe.com/coldfusion/cfml-reference/coldfusion-functions/functions-a-b/arraylen.html},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{abap1,
+   title    = {lines - Row Function - ABAP Keyword Documentation},
+   url      = {https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abendescriptive_functions_table.htm},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{abap2,
+   author = {Igal Serban},
+   title = {How to get rows count of internal table in abap?},
+   howpublished = {Stack Overflow},
+   url = {https://stackoverflow.com/q/394375},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{chill,
+   author = {ITU},
+   title = {Z.200 : CHILL - The ITU-T Programming Language},
+   subtitle = {Recommendation Z.200 (11/99)},
+   url = {https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-Z.200-199911-I!!PDF-E},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{vlang,
+   title    = {V Documentation - V Types - Array Fields},
+   url      = {https://docs.vlang.io/v-types.html#array-fields},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{cobra1,
+   title    = {How To Use Arrays | Cobra},
+   url      = {http://cobra-language.com/how-to/UseArrays/},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{cobra2,
+   title    = {How To Use Lists | Cobra},
+   url      = {http://cobra-language.com/how-to/UseLists/},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{occam,
+   title    = {occam 2.1 reference manual},
+   url      = {https://homepages.inf.ed.ac.uk/stark/ipp/manuals/occam-2-1.pdf},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{maple,
+   title    = {Size - Maple Help},
+   url      = {https://www.maplesoft.com/support/help/maple/view.aspx?path=ArrayTools%2FSize},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{mql5,
+   title    = {ArraySize - Array Functions - MQL5 Reference - Reference on algorithmic/automated trading language for MetaTrader 5},
+   url      = {https://www.mql5.com/en/docs/array/arraysize},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{simulink1,
+   author   = {Thomas LE DIOURON},
+   title    = {Get array size in Simulink - MATLAB Answers - MATLAB Central},
+   url      = {https://www.mathworks.com/matlabcentral/answers/51183-get-array-size-in-simulink},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{simulink2,
+   title    = {Simulink},
+   subtitle = {Width},
+   url      = {https://www.mathworks.com/help/simulink/slref/width.html},
+   urldate  = {2024-11-22},
+   }
+
+   @misc{vbscript,
+   author = {Thomas},
+   title = {VBS: Counting number of items in an Array},
+   howpublished = {Stack Overflow},
+   url = {https://stackoverflow.com/a/73277957},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{plsql1,
+   title    = {PL/SQL Collections and Records},
+   subtitle = {COUNT Method for Nested Table},
+   url      = {https://docs.oracle.com/cd/E11882_01/appdev.112/e25519/composites.htm#CIHGJCHF},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{plsql2,
+   title    = {PL/SQL Collections and Records},
+   subtitle = {CARDINALITY},
+   url      = {https://docs.oracle.com/cd/B28359_01/server.111/b28286/functions015.htm#SQLRF06305},
+   urldate  = {2024-11-15},
+   }
+
+   @misc{clips1,
+   title    = {CLIPS Reference Manual},
+   subtitle = {Volume II Advanced Programming Guide},
+   url      = {https://clipsrules.net/documentation/v641/apg641.pdf},
+   urldate  = {2024-11-16},
+   }
+
+   @misc{clips2,
+   author = {Gary Riley},
+   title = {How to create an integer array on RHS of an rule in CLIPS},
+   howpublished = {Stack Overflow},
+   url = {https://stackoverflow.com/a/44165009},
+   urldate  = {2024-11-16},
+   }
+
+   @misc{postscript1,
+   author = {Adobe Systems Incorporated},
+   title = {PostScript Language Reference},
+   edition = {3},
+   url = {https://www.adobe.com/jp/print/postscript/pdfs/PLRM.pdf},
+   urldate  = {2024-11-22},
+   }
+
+   @misc{postscript2,
+   author = {Emre Demiralp},
+   title = {Postscript III: The Operand Stack of PostScript: Arrays, Variables, Loops and Macro Definitions},
+   url = {http://www.linuxfocus.org/English/July1999/article100.html},
+   urldate  = {2024-11-22},
+   }
+
+   @misc{postscript3,
+   author = {Behrang Nevii},
+   title = {Dossier of PostScript},
+   subtitle = {Operations on Arrays},
+   howpublished = {GitHub},
+   url = {https://github.com/Chubek/postscript-dossier/blob/master/ps-arrays.md#operations-on-arrays},
+   urldate  = {2024-11-22},
+   }
+
+   @misc{gmake,
+   title = {GNU make},
+   subtitle = {Functions for String Substitution and Analysis},
+   url = {https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#index-words},
+   urldate  = {2024-11-24},
+   }
+
+   @misc{icon,
+   title = {Icon Programming Language Operations},
+   subtitle = {(prefix)},
+   url = {https://www2.cs.arizona.edu/icon/refernce/prefix.htm#size},
+   urldate  = {2024-11-24},
+   }
+
+   @misc{ProgrammerHumor,
+   author = {u/mrissaoussama},
+   title = {pleaseAgreeOnOneName},
+   howpublished = {Reddit},
+   url = {https://www.reddit.com/r/ProgrammerHumor/comments/1gxf7ll/pleaseagreeononename/},
+   urldate  = {2024-11-23},
+   }
+
 \end{filecontents}
 
 \bibliography{ref.bib}
 
-\title{Usage of "length", "size", "count", etc.\ in context of retrieving array length}
+\title{Words used for retrieving number of elements in arrays and array-like objects across computer languages}
 \author{Jakub Łukasiewicz}
-\date{\today}
+\date{\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}
 
 \setlength{\parindent}{0em}
 
@@ -833,26 +1033,50 @@
 \begin{titlepage}
    \centering
 
-   {\Large N3376 \par}
+   {\Large N3402 \par}
 
    {\huge\bfseries \@title\par}
 
-   \vspace{2cm}
+   \vspace{1cm}
    {\Large\itshape \@author\/ \par}
 
-   \vspace{2em}
+   \vspace{-0.1em}
+   {\large \textit{\texttt{<me@jorenar.com>}}}
+
+   \vspace{1em}
    {\large \@date\par}
 
-   \vspace{5em}
+   \vspace{2em}
 
    \begin{abstract}
       Due to increased discussion around the name of \texttt{\_Lengthof}~\cite{n3369}
-      operator, this paper, as a form of prior art, presents a list of almost 100 most
-      popular computer languages, what words they use as a base to their respective
-      way of retrieving the number of elements in arrays and array-like objects, with
-      examples and references when possible. \\
-      Primary focus on "length", "size" and "count".
+      operator, this paper, as a form of prior art, presents a list of over 100 most
+      popular computer languages (including non-programming ones that posses any concepts
+      resembling arrays), what words they use as a base to their respective way of
+      retrieving the number of elements in arrays and array-like objects, with examples
+      and references when possible. \\
+      Primary focus on "length", "size", and "count".
    \end{abstract}
+
+   \vspace{2.5em}
+
+   {\small
+      \textbf{Changelog}
+      \vspace{-0.5em}
+      \begin{itemize}[noitemsep]
+         \item \href{https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3402.pdf}{N3402} (\@date)
+            \begin{itemize}[noitemsep]
+               \item Removed mistakenly added Carbon
+               \item Added few missing languages
+               \item Fixed few missing URLs
+               \item Changed title
+            \end{itemize}
+         \item \href{https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3376.pdf}{N3376} (2024-10-12)
+            \begin{itemize}[noitemsep]
+               \item Initial version
+            \end{itemize}
+      \end{itemize}
+   }
 
    \vfill
    \tableofcontents
@@ -860,36 +1084,40 @@
 \makeatother
 
 \filbreak
-\section{Popular high-level computer languages~\cite{so2024,tiobe,ieee,github}}
+\section{Popular high-level languages~\cite{so2024,tiobe,ieee,github,godbolt,so-tags}}
 
 \begin{multicols}{3}
-   \begin{itemize}
+   \begin{itemize}[itemsep=0.05em]
 
       \item Ada
-      \item Algol
+      \item ABAP
+      \item ALGOL
       \item Apex
       \item APL
       \item AWK
-         \begin{itemize}
-            \item GNU Awk
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
+            \item gawk
          \end{itemize}
       \item BASIC
       \item Batch files
       \item C
-      \item C++
       \item C{\#}
-      \item Carbon
+      \item C++
+      \item CHILL
+      \item CLIPS
       \item CMake
       \item COBOL
+      \item Cobra
+      \item ColdFusion
       \item Crystal
       \item Curl
       \item D
       \item Dart
       \item ECMAScript
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
             \item ActionScript
             \item JavaScript
-               \begin{itemize}
+               \begin{itemize}[topsep=0pt,itemsep=0.05em]
                   \item CoffeeScript
                   \item JScript
                   \item TypeScript
@@ -909,12 +1137,13 @@
       \item Groovy
       \item Hack
       \item Haskell
+      \item Icon
       \item Java
       \item Julia
       \item Kotlin
       \item LabVIEW
       \item Lisp
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
             \item Clojure
             \item Common Lisp
             \item Emacs Lisp
@@ -924,33 +1153,38 @@
       \item Logo
       \item Lua
       \item Makefile
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
+            \item GNU Make
+         \end{itemize}
+      \item Maple
       \item MATLAB
       \item Modula-2
       \item Mojo
       \item ML
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
             \item F{\#}
             \item OCaml
             \item Standard ML
          \end{itemize}
+      \item MQL5
       \item Nim
+      \item occam 2
       \item Objective-C
       \item Odin
       \item Pascal
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
             \item Delphi
             \item Object Pascal
          \end{itemize}
       \item Perl
-         \begin{itemize}
-            \item Raku
-         \end{itemize}
       \item PHP
       \item PL/I
+      \item PostScript
       \item PowerShell
       \item Prolog
       \item Python
       \item R
+      \item Raku
       \item Ring
       \item RPG
       \item Ruby
@@ -958,24 +1192,32 @@
       \item SAS
       \item Scala
       \item Shell script
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
             \item Bash
             \item Korn Shell
          \end{itemize}
       \item Simula
+      \item Simulink
       \item Smalltalk
       \item Solidity
       \item SPARK
       \item SQL
-         \begin{itemize}
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
+            \item PL/SQL
             \item PostgreSQL
             \item Snowflake
          \end{itemize}
       \item Swift
       \item SystemVerilog
+      \item TeX
+         \begin{itemize}[topsep=0pt,itemsep=0.05em]
+            \item LaTeX
+         \end{itemize}
       \item Tcl
+      \item V
       \item Vala
       \item VBA
+      \item VBScript
       \item VHDL
       \item Vim script
       \item Visual Basic
@@ -988,14 +1230,12 @@
 
 \clearpage
 
-\filbreak
 \section{Getting length of array-like objects}
-\filbreak
+
 \subsection{Languages using "size"}
 
 \begin{itemize}
-      \filbreak
-   \item Algol~\cite{algol} \qquad {\footnotesize (ALGOL for ClearPath MCP Software by Unisys)}
+   \item ALGOL~\cite{algol} \qquad {\footnotesize (ALGOL for ClearPath MCP Software by Unisys)}
       \nopagebreak \begin{verbatim}
       SIZE(myArray)
       \end{verbatim}
@@ -1012,23 +1252,16 @@
       myArray.size()
       \end{verbatim}
       \filbreak
-   \item C++~\cite{cpp1,cpp2}
+   \item C++~\cite{cpp1,cpp2,cpp3}
       \nopagebreak \begin{verbatim}
-      myArray.size()                  // `myArray` being of type std::array
+      std::size(myArray)
       myVector.size()
+      myStdArray.size()       // `myStdArray` being of type std::array
       \end{verbatim}
-   \item Carbon
+   \item CHILL~\cite{chill}
       \nopagebreak \begin{verbatim}
-      myList.size()
+      SIZE(myArray)
       \end{verbatim}
-      \vspace{-1em}
-      {
-         \footnotesize
-         Carbon has also arrays proper, but nowhere in documentation mentions how to
-         get or calculate its size. Trying to guess at Compiler Explorer turned with
-         no results.  Looking at general trend with other data structures, classifying
-         it under "size" seems most appropriate.
-      }
       \filbreak
    \item Common Lisp~\cite{common-lisp-1}
       \nopagebreak \begin{verbatim}
@@ -1083,12 +1316,27 @@
    \item LabVIEW~\cite{labview}
       \vspace{1em}
 
-      \hspace{2em} Array Size function
+      \hspace{2em} \textit{Array Size} function
       \vspace{1em}
+      \filbreak
+   \item Maple~\cite{maple}
+      \nopagebreak \begin{verbatim}
+      Size(myArray)
+      \end{verbatim}
       \filbreak
    \item MATLAB~\cite{matlab}
       \nopagebreak \begin{verbatim}
       size(myArray)
+      \end{verbatim}
+      \filbreak
+   \item MQL5~\cite{mql5}
+      \nopagebreak \begin{verbatim}
+      ArraySize(myArray)
+      \end{verbatim}
+      \filbreak
+   \item occam 2~\cite{occam}
+      \nopagebreak \begin{verbatim}
+      SIZE myArray
       \end{verbatim}
       \filbreak
    \item PHP~\cite{php2} \quad {\footnotesize (alias for \texttt{count()})}
@@ -1126,9 +1374,9 @@
       \nopagebreak \begin{verbatim}
       array size myArray
       \end{verbatim}
+      \filbreak
 \end{itemize}
 
-\filbreak
 \subsection{Languages using "length"}
 
 \begin{itemize}
@@ -1149,6 +1397,11 @@
       myArray.GetLength()
       \end{verbatim}
       \filbreak
+   \item CLIPS~\cite{clips1,clips2}
+      \nopagebreak \begin{verbatim}
+      (length$ ?myArray)
+      \end{verbatim}
+      \filbreak
    \item Clojure~\cite{clojure1,clojure2}
       \nopagebreak \begin{verbatim}
       (alength myArray)
@@ -1157,6 +1410,16 @@
    \item CMake~\cite{cmake}
       \begin{verbatim}
       list(LENGTH myList n)
+      \end{verbatim}
+      \filbreak
+   \item Cobra~\cite{cobra1}
+      \nopagebreak \begin{verbatim}
+      myArray.length
+      \end{verbatim}
+      \filbreak
+   \item ColdFusion~\cite{cfml}
+      \begin{verbatim}
+      ArrayLen(myArray)
       \end{verbatim}
       \filbreak
    \item D~\cite{dlang}
@@ -1205,6 +1468,11 @@
       ALEN(myArray)
       \end{verbatim}
       \filbreak
+   \item gawk~\cite{gawk}
+      \nopagebreak \begin{verbatim}
+      length(myArray)
+      \end{verbatim}
+      \filbreak
    \item GLSL~\cite{glsl}
       \nopagebreak \begin{verbatim}
       myArray.length()
@@ -1213,11 +1481,6 @@
    \item Go~\cite{go}
       \nopagebreak \begin{verbatim}
       len(myArray)
-      \end{verbatim}
-      \filbreak
-   \item GNU Awk~\cite{gawk}
-      \nopagebreak \begin{verbatim}
-      length(myArray)
       \end{verbatim}
       \filbreak
    \item Haskell~\cite{haskell}
@@ -1230,7 +1493,7 @@
       myArray.length
       \end{verbatim}
       \filbreak
-   \item JavaScript/TypeScript/CoffeeScript/JScript~\cite{js}
+   \item JavaScript / TypeScript / CoffeeScript / JScript ~\cite{js}
       \nopagebreak \begin{verbatim}
       myArray.length
       \end{verbatim}
@@ -1269,6 +1532,11 @@
    \item PostgreSQL~\cite{postgresql}
       \nopagebreak \begin{verbatim}
       SELECT array_length(myArray, 1) FROM table;
+      \end{verbatim}
+      \filbreak
+   \item PostScript~\cite{postscript1,postscript2,postscript3}
+      \nopagebreak \begin{verbatim}
+      myArray length
       \end{verbatim}
       \filbreak
    \item PowerShell~\cite{ps1,ps2}
@@ -1332,6 +1600,11 @@
       Array.length myArray
       \end{verbatim}
       \filbreak
+   \item V~\cite{vlang}
+      \nopagebreak \begin{verbatim}
+      myArray.len
+      \end{verbatim}
+      \filbreak
    \item Vala~\cite{vala}
       \nopagebreak \begin{verbatim}
       myArray.length[0]
@@ -1363,9 +1636,9 @@
       \nopagebreak \begin{verbatim}
       myArray.len
       \end{verbatim}
+      \filbreak
 \end{itemize}
 
-\filbreak
 \subsection{Languages using "count"}
 
 \begin{itemize}
@@ -1373,6 +1646,11 @@
    \item Clojure~\cite{clojure3}
       \nopagebreak \begin{verbatim}
       (count myCollection)
+      \end{verbatim}
+      \filbreak
+   \item Cobra~\cite{cobra2}
+      \nopagebreak \begin{verbatim}
+      myList.count
       \end{verbatim}
       \filbreak
    \item Eiffel~\cite{eiffel}
@@ -1395,6 +1673,11 @@
       count($myArray)
       \end{verbatim}
       \filbreak
+   \item PL/SQL~\cite{plsql1}
+      \nopagebreak \begin{verbatim}
+      myTable.COUNT
+      \end{verbatim}
+      \filbreak
    \item PowerShell~\cite{ps1}
       \nopagebreak \begin{verbatim}
       $myArray.Count
@@ -1414,16 +1697,23 @@
       \nopagebreak \begin{verbatim}
       myArray.count
       \end{verbatim}
+      \filbreak
 \end{itemize}
 
-\filbreak
 \subsection{Languages using other words}
 
 \begin{itemize}
+   \item ABAP~\cite{abap1,abap2}
+      \nopagebreak \begin{verbatim}
+      LINES(myTable)
+      \end{verbatim}
       \filbreak
-   \item C++~\cite{cpp3}
+   \item C++~\cite{cpp4,cpp5,cpp6}
       \nopagebreak \begin{verbatim}
       myVector.capacity()
+
+      std::extent<decltype(myArray)>::value
+      std::extent_v<decltype(myArray)>
       \end{verbatim}
       \filbreak
    \item Common Lisp~\cite{common-lisp-2}
@@ -1434,6 +1724,11 @@
    \item GAMS~\cite{gams1,gams2}
       \nopagebreak \begin{verbatim}
       card(mySet)
+      \end{verbatim}
+      \filbreak
+   \item GNU Make~\cite{gmake}
+      \nopagebreak \begin{verbatim}
+      $(words $(myList))
       \end{verbatim}
       \filbreak
    \item Lua~\cite{lua}
@@ -1451,6 +1746,11 @@
       DIM(myArray,1)
       \end{verbatim}
       \filbreak
+   \item PL/SQL~\cite{plsql2}
+      \nopagebreak \begin{verbatim}
+      CARDINALITY(myTab)
+      \end{verbatim}
+      \filbreak
    \item Raku~\cite{raku}
       \nopagebreak \begin{verbatim}
       @myArray.elems
@@ -1461,6 +1761,12 @@
       %ELEM(myArray)
       \end{verbatim}
       \filbreak
+   \item Simulink~\cite{simulink1,simulink2}
+      \vspace{1em}
+
+      \hspace{2em} \textit{Width} block
+      \vspace{1em}
+      \filbreak
    \item SAS~\cite{sas}
       \nopagebreak \begin{verbatim}
       dim(myArray)
@@ -1470,21 +1776,26 @@
       \nopagebreak \begin{verbatim}
       dimOf(myArray)
       \end{verbatim}
+      \filbreak
 \end{itemize}
 
-\filbreak
 \subsection{Languages using symbols}
 
 \begin{itemize}
-      \filbreak
    \item APL~\cite{apl}
       \nopagebreak \begin{verbatim}
       ⍴ myArray
+      ≢ myArray
       \end{verbatim}
       \filbreak
    \item Bash~\cite{bash}
       \nopagebreak \begin{verbatim}
       ${#myArray[@]}
+      \end{verbatim}
+      \filbreak
+   \item Icon~\cite{icon}
+      \nopagebreak \begin{verbatim}
+      *myArray
       \end{verbatim}
       \filbreak
    \item Korn Shell~\cite{korn1,korn2}
@@ -1502,10 +1813,11 @@
       \nopagebreak \begin{verbatim}
       $#
       \end{verbatim}
-      { \footnotesize (only one array per script/subshell in standard Shell language) }
+      \vspace{-1.5em}
+      { \footnotesize (only one array per script/subshell/function in standard POSIX Shell language) }
+      \filbreak
 \end{itemize}
 
-\filbreak
 \subsection{Languages where length is computed}
 
 \begin{itemize}
@@ -1534,84 +1846,105 @@
       )
       \end{verbatim}
       \filbreak
-   \item C/C++/Objective-C~\cite{n3369}
+   \item C / C++ / Objective-C ~\cite{n3369}
       \nopagebreak \begin{verbatim}
       sizeof myArray / sizeof myArray[0]
       \end{verbatim}
       \filbreak
-   \item COBOL~\cite{cobol1,cobol2}
+   \item COBOL~\cite{cobol1,cobol2,cobol3}
       \nopagebreak \begin{verbatim}
       COMPUTE n = LENGTH OF myArray / LENGTH OF myArray-element
       \end{verbatim}
-   \item Forth
-      \nopagebreak \begin{verbatim}
-      \ users implement their own arrays as well as words for getting dimensions
-      \end{verbatim}
    \item Makefile
       \nopagebreak \begin{verbatim}
-      ARRAY_SIZE := `echo $(myArray) | wc -w`
+      N := `echo $(myList) | wc -w`
       \end{verbatim}
-      \vspace{-1em}
-      { \footnotesize (very unreliable and requires passing the "array" to another language) }
+      \vspace{-1.5em}
+      { \footnotesize (unreliable and requires "passing" the list to another language) }
+      \vspace{0.5em}
       \filbreak
    \item Simula~\cite{simula}
       \nopagebreak \begin{verbatim}
       upperbound(myArray,1) - lowerbound(myArray,1) + 1
       \end{verbatim}
       \filbreak
-   \item VBA~\cite{vba}
+   \item VBA / VBScript ~\cite{vba,vbscript}
       \nopagebreak \begin{verbatim}
       UBound(myArray) - LBound(myArray) + 1
       \end{verbatim}
+      \filbreak
 \end{itemize}
 
-\filbreak
-\section{Summary}
+\subsection{Languages where arrays are implemented by users}
 
 \begin{itemize}
+   \item Forth
+   \item TeX / LaTeX
+\end{itemize}
+
+\section{Observations}
+
+\begin{itemize}
+
+   \item Some of the listed languages provide multiple ways of retrieving
+      number of elements. Sometimes the ways are equivalent, but usually
+      the underlying mechanism is different.
+      \begin{itemize}
+         \item e.g.~Ruby has \texttt{.length}, but \texttt{.count}
+            without condition also gives the number of elements;
+         \item e.g.~C++ allows to calculate array length via
+            \texttt{sizeof arr / sizeof arr[0]}, by using
+            \texttt{std::size()} function, by passing the type to
+            \texttt{std::extent\_v<T>} trait template, and couple
+            other ways.
+      \end{itemize}
+      If such additional method was not a primary or prominent way, or
+      at least from the focus group, it might be missing from this paper.
 
    \item The vast majority of languages use derivatives of either "length" or "size", \\
       with "length" being the dominat base.
 
+   \item "Length" and "size" are also often used for other linear data structures
+      beside arrays, like strings, linked lists, queues, etc.
+
    \item Documentations, specifications and communities\footnote{Communities speaking
-      natural languages, different than English, also can have similar experience,
+      natural languages, different than English, also can have similar experience;
       for example in Polish: "rozmiar tablicy" ("size of array") and "długość tablicy"
       ("length of array") are similarly quite often seen interchanged in literature
       and conversations.} use terms "length" and "size" quite freely and interchangeably
-      in the meaning: the number of elements in array.
-
-   \item "Length" is widely understood as "the number of elements in arrays and array-like types".
-
-   \item "Count" often means "count of X in Y", where Y might contain more than just Xs.
-
-   \item Very limited number of languages use "count" as their primary choice for denoting
-      or retrieving array length; sometimes it's a side effect of more versatile feature.
-
-   \item From the list, non-definitive examples of "count" usage:
+      in the meaning of "the number of elements in data structure". Sometimes languages
+      make them alias one another.
       \begin{itemize}
-         \item Clojure -- has also \texttt{alength} (for Java arrays, but supposedly "works for all arrays");
-         \item PHP -- provides alias: \texttt{sizeof()};
+         \item Other words also sometimes are seen as synonyms, although rarely
+            and/or in specific contexts (e.g. "dimension" or "extent" would
+            primarily be present when generalizing to multi-dimensional arrays).
+      \end{itemize}
+
+   \item "Count" is 3rd most popular choice, albeit significantly lesser number
+      of languages represent this category. Sometimes it is a side effect of more
+      versatile feature (e.g.~in meaning "count of X in Y", where Y might contain
+      more than just Xs).
+      \begin{itemize}
          \item PowerShell -- dedicates \texttt{.Length} to arrays, \texttt{.Count} is
             inherited from underlying type;
          \item Ruby -- uses "count" to, nomen omen, count elements meeting condition; \\
             only if condition is empty then \texttt{.count} gives equivalent of \texttt{.length};
-         \item SQL -- uses \texttt{COUNT}, in similar fashion to Ruby, for more generic purpose.
+         \item SQL -- in similar fashion to Ruby, uses \texttt{COUNT} for more generic purpose.
       \end{itemize}
 
-   \item Many languages provide may provide additional ways of retrieving array length,
-      but if that wasn't primary method or one from the focus group, it's rather missing
-      from the list.
+      Additionally, Clojure has also \texttt{alength} (for Java arrays, but supposedly
+      "works for all arrays"), and PHP provides alias: \texttt{sizeof()}.
 
-   \item On the list of other word bases we see "dimension", "elements", "capacity",
-      "n", "high", and "cardinality".
+      "Count" might be more popular for non-linear data structures, like e.g.~graphs.
 
-   \item On the list of symbols we see "\#", "@", and "\texttt{⍴}".
+   \item 4th most common word is "dimension"; 5th are ex aequo "elements" and "cardinality". \\
+      Including methods of calculating number of elements puts "bounds" in top 5 too.
 
 \end{itemize}
 
-\filbreak
 \section*{} % end
 \clearpage
+\nocite{ProgrammerHumor}
 
 \printbibliography[heading=bibintoc,title=References]
 
