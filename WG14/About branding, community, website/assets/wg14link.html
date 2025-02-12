@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>wg14.link</title>
+  <meta name="author" content="Jorenar">
+  <meta name="description" content="">
+  <meta name="keywords" content="WG14,link,redirect">
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    "use strict";
+
+    const search = window.location.search.substring(1);
+
+    const WG14 = "https://www.open-std.org/jtc1/sc22/wg14";
+
+    async function fetchProxy(url) {
+      return await fetch(`https://api.codetabs.com/v1/proxy?quest=${url}`);
+    }
+
+    async function getHtml(url) {
+      const res = await fetchProxy(url);
+      const raw = await res.text();
+
+      const html = document.createElement("dom");
+      html.innerHTML = raw;
+
+      return html;
+    }
+
+    function go_draft() {
+      const url = WG14 + "/www/projects.html";
+      getHtml(url).then((html) => {
+        const a = html.querySelector('table:first-of-type tr > td:last-child > a');
+        window.location.replace(WG14 + '/www/' + a.getAttribute('href'));
+      });
+    }
+
+    function go_std(std) {
+      const url = WG14 + "/www/projects.html";
+      getHtml(url).then((html) => {
+        html.querySelectorAll("table:first-of-type tr").forEach((tr) => {
+          if (tr.querySelector(":first-child").textContent === std) {
+            const doc = tr.querySelector("td:last-child > a").getAttribute("href");
+            window.location.replace(WG14 + "/www/" + doc);
+          }
+        });
+      });
+    }
+
+    function go_ndoc(n) {
+      const url = WG14 + "/www/wg14_document_log.htm";
+      const pat = new RegExp("\/" + n + "(\\.|$)");
+
+      getHtml(url).then((html) => {
+        html.querySelectorAll("a").forEach((a) => {
+          if (a.href.match(pat)) {
+            window.location.replace(WG14 + "/www/" + a.getAttribute("href"));
+          }
+        });
+      });
+    }
+
+    function go_msg(nr) {
+      window.location.replace(WG14 + "/" + nr.replace("msg", ""));
+    }
+
+    if (!search && !window.location.href.match(/\?$/)) {
+      // window.location.replace(WG14);  // TODO
+    }
+
+    if (/^draft/i.test(search)) {
+      go_draft();
+    }
+
+    if (/^C\d\d/i.test(search)) {
+      go_std(search.toUpperCase());
+    }
+
+    if (/^n\d+$/i.test(search)) {
+      go_ndoc(search.toLowerCase());
+    }
+
+    if (/^msg\d+$/.test(search)) {
+      go_msg(search);
+    }
+  </script>
+  <style>
+    table { margin-left: 1em; }
+    td { padding-right: 1em; }
+  </style>
+</head>
+<body>
+  <h1>wg14.link</h1>
+
+  <script>
+    if (window.location.search) {
+      document.write(`404: redirect for '${window.location.search.substring(1)}' not found<br><br>`);
+    }
+  </script>
+
+  <div>Example redirections:</div>
+  <table>
+    <tr>
+      <td><a href="http://wg14.link">wg14.link</a></td>
+      <td>WG14 website <small>(this redirection currently disabled)</small></td>
+    </tr>
+    <tr>
+      <td><a href="http://wg14.link?">wg14.link?</a></td>
+      <td>this page</td>
+    </tr>
+    <tr>
+      <td><a href="http://wg14.link?draft">wg14.link?draft</a></td>
+      <td>latest working draft</td>
+    </tr>
+    <tr>
+      <td><a href="http://wg14.link?c11">wg14.link?c11</a></td>
+      <td>final public draft of C11</td>
+    </tr>
+    <tr>
+      <td><a href="http://wg14.link?n3408">wg14.link?n3408</a></td>
+      <td>document N3408</td>
+    </tr>
+    <tr>
+      <td><a href="http://wg14.link?msg27143">wg14.link?msg27143</a></td>
+      <td>reflector message 27143</td>
+    </tr>
+  </table>
+
+  <script>
+    document.querySelectorAll('td:first-child > a').forEach((a) => {
+      a.href = a.href.replace('http://wg14.link/',
+        window.location.href.replace(/\?.*/, ''));
+    });
+  </script>
+
+</body>
+</html>

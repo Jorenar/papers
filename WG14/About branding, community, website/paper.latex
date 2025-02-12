@@ -1,0 +1,403 @@
+\documentclass[12pt]{extarticle}
+
+\usepackage[
+   a4paper,
+   vmargin=20pt,
+   hmargin=35pt,
+   includefoot
+]{geometry}
+
+\usepackage[pdfusetitle]{hyperref}
+\usepackage{attachfile2}
+\usepackage{caption}
+\usepackage{changepage}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newenvironment{aside}
+  {\begin{mdframed}[style=0,%
+      leftline=false,rightline=false,leftmargin=2em,rightmargin=2em,%
+          innerleftmargin=0pt,innerrightmargin=0pt,linewidth=0.75pt,%
+      skipabove=7pt,skipbelow=7pt]\small}
+  {\end{mdframed}}
+
+\setlength{\parindent}{0em}
+
+\attachfilesetup{color=blue}
+
+\usepackage[
+   backend=bibtex,
+   urldate=iso,
+   date=iso,seconds=true,
+]{biblatex}
+\bibliography{ref.bib}
+
+\definecolor{CadetGrey}{RGB}{145, 163, 176}
+\definecolor{HitGrey}{RGB}{161, 169, 168}
+\definecolor{LightSteelBlue}{RGB}{176, 196, 222}
+
+
+\title{[N3408] About branding, community, website of the C programming language}
+\author{Jakub Łukasiewicz}
+\date{\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}
+
+\begin{document}
+
+\makeatletter
+\begin{titlepage}
+   \centering
+
+   {\Large N3408 \par}
+
+   {\huge\bfseries About\\branding, community, website\\of\\the C programming language\par}
+
+   \vspace{1cm}
+   {\Large\itshape \@author\/ \par}
+
+   \vspace{1em}
+   {\large \@date\par}
+
+   \vspace{3em}
+
+   \begin{abstract}
+      C lacks on the front of unified presence that could enhance its visibility
+      and community engagement. As we observe efforts in this regard for other
+      as old or even older languages~\cite{fortran,forth,cobol}, improvements
+      to "branding" of C ought to take place as well.
+
+      This document reminds about the traditional logo of the language,
+      mentions colloquial names of the standard revisions, suggests
+      presence on code forges, and has PDF attachments with prototypes
+      of \texttt{wg14.link} service, as well as a new website that
+      would serve as resources hub for both new and seasoned programmers.
+   \end{abstract}
+
+   \vspace{2em}
+
+   \vfill
+   \tableofcontents
+\end{titlepage}
+\makeatother
+
+\filbreak
+
+\section{Logo}
+
+Traditionally, the logo of C language is uppercase letter 'C' in font Helvetica Black, \\
+first used on the cover\footnotemark[1] of the book \textit{The C Programming Language} (K\&R).
+
+\vspace{0.5em}
+
+Usually colored in shades of blue and grey like
+\colorbox{HitGrey}{Hit Grey},
+\colorbox{CadetGrey}{Cadet Grey},
+or
+\colorbox{LightSteelBlue}{LightSteelBlue}.
+
+\vspace{2em}
+
+\begin{figure}[!h]
+   \centering
+   \textattachfile{logo.svg}{
+      \includegraphics[width=0.5\textwidth]{logo.png}
+   }
+   \caption*{
+      \small
+      SVG file\footnotemark[2]
+      uploaded to Wikimedia Commons
+      for public domain
+      by Cobaiahackers
+      on 2023-01-12
+      \cite{wiki:c-logo}
+   }
+\end{figure}
+
+\vspace{5em}
+
+\begin{aside}
+   Beside the traditional logo, various other stylizations of letter C can be found.
+
+   Most noticeable example is a derivative of C++ logo with~"++" removed, and sometimes
+   with blue colors either lightened, darkened, or shifted towards violet spectrum.
+
+   \vspace{0.5em}
+
+   While some may prefer it to the traditional one, its usage is not recommended.
+
+   Even if C was lacking an established\footnotemark[3] logo, and acquired
+   permission~\cite{cpp} from Standard C++ Foundation to use one based on
+   their design, the author(s) of the derivative work are not know. \\
+   Another issue rises from existence of similar fan-made creations for different
+   languages\footnotemark[4] that are not affiliated with each other, nor have
+   particularly much in common beside taking inspiration from C and C++,
+   the strongest being the name.
+\end{aside}
+
+\footnotetext[1]{\ while the letter 'C' alone is within public
+   domain~\cite{wiki:c-logo-public-domain}, the full cover graphic
+   might meet threshold of originality for copyright protection;
+   in either case, the stylized letter is plenty sufficient, and
+   full cover would be "noisy" and harder to fit into iconography}
+\footnotetext[2]{\ copy of the file attached to this PDF document as \textattachfile{logo.svg}{logo.svg}}
+\footnotetext[3]{\ nota bene, established before C++ (\textit{C with Classes}) was even conceived, let alone its logo}
+\footnotetext[4]{\ like for C{-}{-} or C\# (although the latter sometimes has wandered into official communication)}
+
+\clearpage
+
+\section{Colloquial names}
+\subsection{Committee}
+
+Official name of the C standardization group is \textit{ISO/IEC JTC1/SC22/WG14},
+usually shortened to \textit{WG14}. However, the first standardization effort
+was by \textit{X3J1I Technical Committee} under project \textit{381-D} by
+\textit{ANSI} on \textit{Computers and Information Processing (X3)}. Before
+that was book \textit{The C Programming Language} by Brian Kernighan and
+Dennis Ritchie, which is also considered to be an informal standard. And
+even before that, Dennis Ritchie and his coworkers were working on C at
+the Bell Labs from AT\&T.
+
+\vspace{0.5em}
+
+There is K\&R C, ANSI C, and currently ISO C -- a precedence of change
+is established in this matter.
+
+\vspace{0.5em}
+
+Therefore, to best reflect past, present, and whatever the future holds,
+it is probably for the better to try using "\textit{C Committee}" whenever
+possible, unless precision is required.
+
+\subsection{Standard revisions}
+
+As per the multiple agreements during Committee meetings, as well
+as discussions on mailing list, the names of each revision are
+\textbf{not} directly derived from the full name of the document
+specifying them, nor from the year it was published, nor even
+necessarily from they year the work on them was finalized.
+
+\vspace{1em}
+
+As of today (\@date) the list is:
+
+\vspace{0.5em}
+
+\quad \begin{tabular}{|c|l|c|l}
+   \cline{1-3}
+   \textbf{version} & \textbf{publication} & \textbf{nicknames} \\
+   \cline{1-3}
+
+   C2y        &  & &\footnotemark[1] \\
+   C23        &  ISO/IEC 9899:2024 & & \\
+   C17        &  ISO/IEC 9899:2018 & & \\
+   C11        &  ISO/IEC 9899:2011 & & \\
+   Embedded C &  ISO/IEC TR 18037:2008 & &\footnotemark[2] \\
+   C99        &  ISO/IEC 9899:1999 & & \\
+   C95        &  ISO/IEC 9899:1990/Amd 1:1995 & C94 & \\
+   C90        &  ISO/IEC 9899:1990 & & \\
+   C89        &  ANSI X3.159-1989 & ANSI C & \\
+              &  The C Programming Language & K\&R C & \\
+
+   \cline{1-3}
+\end{tabular}
+
+\footnotetext[1]{\ future dialect of the standard, currently work in progress}
+\footnotetext[2]{\ existence of such official extension to the language can lead to
+  curious situation of somebody not aware about this Technical Report overcorrecting
+  somebody aware of its existence (although the probability of it is quite low; in
+  most cases person talking about "normal" and "embedded" C as if different languages
+  is usually the one in the wrong)}
+
+\clearpage
+
+\section{Presence on code forges}
+
+Social network presence become of utter importance in the modern world.
+For programming related projects first and foremost important type of SNS
+are code forges, nowadays dominated by Git hosting.
+
+\subsection{\href{https://github.com/}{GitHub}}
+
+It's one of the oldest Git repository hosting services right now, as well as the most
+popular code forge of today in general. It serves as home to many prominent projects,
+from hobbyist to corporate level. While not without its controversies, it is still
+the official mirror of many crucial FOSS efforts.
+
+\vspace{0.7em}
+
+Notable examples of organizations from realm of language design present on this platform:
+\vspace{-1em}
+\begin{multicols}{3}
+   \begin{itemize}[nosep]
+         \footnotesize
+      \item C++ (\href{https://github.com/cplusplus}{cplusplus}, \href{https://github.com/isocpp}{isocpp})
+      \item C\# (\href{https://github.com/dotnet}{dotnet})
+      \item Carbon (\href{https://github.com/carbon-language}{carbon-language})
+      \item D (\href{https://github.com/dlang}{dlang}, \href{https://github.com/dlang-community}{dlang-community})
+      \item Fortran (\href{https://github.com/j3-fortran}{j3-fortran}, \href{https://github.com/fortran-lang}{fortran-lang})
+      \item Go (\href{https://github.com/golang}{golang})
+      \item Korn~Shell (\href{https://github.com/ksh93}{ksh93})
+      \item Kotlin (\href{https://github.com/JetBrains/kotlin}{JetBrains/kotlin})
+      \item Nim (\href{https://github.com/nim-lang}{nim-lang})
+      \item OCaml (\href{https://github.com/ocaml}{ocaml})
+      \item Odin (\href{https://github.com/odin-lang}{odin-lang})
+      \item Perl (\href{https://github.com/Perl}{Perl})
+      \item PHP (\href{https://github.com/php/}{php})
+      \item PowerShell (\href{https://github.com/PowerShell}{PowerShell})
+      \item Raku (\href{https://github.com/Raku}{Raku})
+      \item Ruby (\href{https://github.com/ruby}{ruby})
+      \item Rust (\href{https://github.com/rust-lang}{rust-lang})
+      \item Scala (\href{https://github.com/scala}{scala})
+      \item Standard ML (\href{https://github.com/smlfamily}{smlfamily})
+      \item Swift (\href{https://github.com/swiftlang}{swiftlang})
+      \item TypeScript (\href{https://github.com/microsoft/TypeScript/}{microsoft/TypeScript})
+      \item V (\href{https://github.com/vlang}{vlang})
+      \item VimL (\href{https://github.com/vim}{vim})
+      \item Zig (\href{https://github.com/ziglang}{ziglang})
+   \end{itemize}
+\end{multicols}
+
+Due to the platform's popularity, a big issue is finding not claimed profile name.\\
+C Committee has at its disposition:
+\begin{itemize}[nosep]
+   \item sc22wg14
+   \item c-std-lang
+   \item c-lingua
+\end{itemize}
+
+\vspace{0.7em}
+
+Use-cases:
+\begin{itemize}[nosep]
+   \item hosting of C's homepage\footnote{\ not replacement for Committee's webpage for work}
+   \item hosting of \texttt{wg14.link}
+   \item public bug tracking
+   \item awesome list~\cite{awesome} of C implementations
+   \item interaction with users (individuals, organizations, corporates)
+\end{itemize}
+
+\subsection{\href{https://codeberg.org}{Codeberg}}
+
+Powered by Forgejo\footnote{\ a fork of Gitea}, Codeberg is a non-profit Git hosting
+for FOSS projects, gaining the popularity recently. There are some convenient ways
+to mirror~\cite{codeberg-mirror} repositories from and to other hosting services.
+While the C standard does not meet the criteria of a FOSS project, there should not
+be an issue to host on this platform adjacent repositories that do meet requirements.
+
+\subsection{\href{https://gitlab.com/}{GitLab}}
+
+The Committee has a \href{https://gitlab.gwdg.de/iso-c/}{group} on GitLab instance
+maintained by \textit{Society for scientific data processing mbH Göttingen} (GWDG).
+It aids in developing the standard itself, as well as other internal projects, and
+could be useful for projects meant to read-only by general public.
+
+\subsection{Other forges}
+
+Two other online forges worth having eye on include
+\href{https://sourceforge.net/}{SourceForge}
+and \href{https://sr.ht/}{sourcehut}.
+
+\clearpage
+
+\section{Internet domains}
+
+Similarly to GitHub profile names, lot of sensible domain names have already been claimed.
+Fortunately not all of them -- some of unique ones still remain open, and it is know that
+some of the reservations were made by the Committee members. It should be discussed which
+ones and for what purposes to use them.
+
+\section{wg14.link}
+
+WG21 offers an convenient URL shortening service for accessing their documents.~\cite{wg21link}
+
+\vspace{1em}
+
+Thanks to not overcomplicated structure of the
+\href{https://www.open-std.org/jtc1/sc22/wg14/}{WG14 website},
+scrapping it is not only possible, but fairly simple on the
+client side with a bit of JavaScript code.
+Attachment \textattachfile{wg14link.html}{wg14link.html}
+holds a~prototype of such solution.
+After opening the HTML file\footnote{\ redirections linked in this document will not
+work until after the deployment of the \texttt{wg14.link} online} in a web browser
+the following self-explanatory view should appear:
+
+\vspace{2em}
+
+\begin{adjustwidth}{1em}{}
+   \fontfamily{cmr}\selectfont
+   {\Large wg14.link} \\
+
+   Example redirections:\\
+   \begin{adjustwidth}{1em}{}
+      \begin{tabular}{ll}
+         \href{http://wg14.link}{wg14.link} & WG14 website {\scriptsize (this redirection currently disabled)} \\
+         \href{http://wg14.link?}{wg14.link?} & this page \\
+         \href{http://wg14.link?draft}{wg14.link?draft} & latest working draft \\
+         \href{http://wg14.link?c11}{wg14.link?c11} & final public draft of C11 \\
+         \href{http://wg14.link?n3408}{wg14.link?n3408} & document N3408 \\
+         \href{http://wg14.link?msg27143}{wg14.link?msg27143} & reflector message 27143 \\
+      \end{tabular}
+   \end{adjustwidth}
+\end{adjustwidth}
+
+\vspace{2em}
+
+Such file can be served statically via GitHub pages, for example.
+
+\clearpage
+
+\section{Homepage}
+
+The Committee's website on open-std.org serves its purpose, C lacks
+an approachable front-page for people outside the working group.
+Attachment \textattachfile{homepage.html}{homepage.html} holds
+a proposition of one:\\
+A simple HTML5 document, with CSS tricks to make it appear multi-page, plus negligible
+amount of JavaScript to update the window title for each "sub-page"; serves both light
+and dark theme, as well as adapts to size of mobile devices. Depending on where and how
+it would be deployed, it could be split for maintainability and reassembled e.g.\ with
+Jekyll static site generator.
+
+\begin{aside}
+   A temporary live demo of the design can be found on \url{https://jorenar.com/c-website-demo}
+\end{aside}
+
+
+\begin{figure}[!h]
+   \centering
+   \includegraphics[width=\textwidth]{assets/screenshot-light.png}
+   \caption*{light theme}
+\end{figure}
+
+\begin{figure}[!h]
+   \centering
+   \includegraphics[width=\textwidth]{assets/screenshot-dark.png}
+   \caption*{dark theme}
+\end{figure}
+
+\begin{figure}[!h]
+   \centering
+   \includegraphics[width=0.5\textwidth]{assets/screenshot-mobile.png}
+   \caption*{mobile with dark theme}
+\end{figure}
+
+\clearpage
+
+\section{Acknowledgments}
+
+\textbf{Patrizia Kaye} for suggesting Codeberg as alternative to GitHub.
+
+\textbf{Martin Uecker} for organizing space at GWDG's instance of GitLab.
+
+\textbf{Aaron Ballman} for reserving \texttt{wg14.link} and \url{https://github.com/sc22wg14}.
+
+\textbf{Robert C. Seacord} for efforts in standardizing usage of the names of the C standards.
+
+\printbibliography[heading=bibintoc,title=References]
+
+\end{document}
