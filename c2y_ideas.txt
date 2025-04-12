@@ -1,17 +1,19 @@
-* versioning a la Perl's `use`
-    https://news.ycombinator.com/item?id=24108109
 * byte
 * #ban / #disable
+* https://en.wikipedia.org/wiki/Result_type
 * (#header NAME + #source NAME) or (#module NAME)
 * int<N>
 * [[restrict]]
     https://www.lysator.liu.se/c/dmr-on-noalias.html
 * malloc_size() / malloc_usable_size() / HeapSize()
-* fat pointers and slices
+* fix to declaration syntax
+    https://old.reddit.com/r/C_Programming/comments/1iyshbm/why_pointers_should_be_declared_as_t_p_instead_of/
+* fat pointers, slices, first class arrays
     https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2529.pdf
     https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2660.pdf
     https://www.bell-labs.com/usr/dmr/www/vararray.pdf
     https://www.digitalmars.com/articles/C-biggest-mistake.html
+    https://old.reddit.com/r/C_Programming/comments/1iiqfsy/would_the_average_c_programmer_be_interested_in/
 * debloating C library
   * remove Annex K
     * https://stackoverflow.com/questions/50724726
