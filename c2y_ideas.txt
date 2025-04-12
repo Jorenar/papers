@@ -3,6 +3,8 @@
 * https://en.wikipedia.org/wiki/Result_type
 * (#header NAME + #source NAME) or (#module NAME)
 * int<N>
+* offsetof should be a keyword
+    https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2025/p2883r1.pdf
 * [[restrict]]
     https://www.lysator.liu.se/c/dmr-on-noalias.html
 * malloc_size() / malloc_usable_size() / HeapSize()
