@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[N3643] Statement expressions (draft)</title>
+  <meta name="author" content="Jakub Łukasiewicz">
+  <meta name="description" content="Rough draft of wording for statement expressions">
+  <meta name="keywords" content="statement,expressions,gnu,c,extension,standardization">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html {
+      background: #0d1117;
+    }
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      max-width: 900px;
+      text-align: justify;
+      margin: 20px auto;
+      font-size: 16px;
+      color: #eee;
+    }
+
+    a, a:visited {
+      color: inherit;
+    }
+
+    blockquote {
+      border-left: 2px solid;
+      padding-left: 7px;
+    }
+
+    aside {
+      opacity: 0.8;
+      font-size: 0.9em;
+      background: #222b30;
+      padding: 0.1em 1em;
+    }
+
+    code {
+      font-size: 0.85em;
+    }
+    pre > code {
+      display: block;
+      margin-top: -1.2em;
+    }
+    pre:has(> code) {
+      margin: 0;
+    }
+    pre:has(> code) + p {
+      margin-top: 0;
+    }
+
+    ins {
+      background: #030;
+      text-decoration: none;
+    }
+    del {
+      background: #800;
+      text-decoration: line-through;
+    }
+
+    ins + ins, del + del, aside + aside {
+      margin-top: 0.5em;
+    }
+
+    .wording {
+      padding-left: 1em;
+    }
+    .wording > * {
+      padding-left: 2em;
+      padding-right: 1em;
+    }
+    .wording p:before {
+      display: inline-block;
+      width: 2.5ch;
+      margin-left: -3.5ch;
+      text-align: right;
+      font-size: 0.85em;
+      counter-increment: pars;
+      content: "" counter(pars) " ";
+    }
+    .wording :not(pre) > code {
+      font-weight: bold;
+    }
+    .wording > ins, .wording > del {
+      display: block;
+      padding-top: 0.1em;
+      padding-bottom: 0.1em;
+    }
+
+    .footnotes {
+      margin-top: 1em;
+      padding-left: 0;
+      font-size: 0.8em;
+      list-style-type: decimal;
+    }
+
+    .nobr {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>[N3643] Statement expressions (draft)</h1>
+  <p>
+  The following paper contains a rough draft of wording for standardizing
+  popular <i>statement expressions</i> extension.<br>
+  <sub>With a side goal to enable them for evaluation as constant expressions.</sub>
+  </p>
+  <aside>
+    <p>
+    Being just a quick draft, this document exists primarily as a future reference.
+    </p>
+  </aside>
+  <aside>
+    <p>
+    The use-cases of this feature might be better addressed by:
+    </p>
+    <ul>
+      <li>generic functions, e.g. via polymorphic types (<a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3212.pdf">N3212</a>)
+        or monomorphization (<a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2698.pdf">N2698</a>);</li>
+      <li>functions evaluated during translation, e.g. <code>constexpr</code> functions (<a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3389.htm">N3389</a>);</li>
+      <li>lambdas, e.g. type-generic lambdas (<a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2924.pdf">N2924</a>)
+        or basic lambdas (<a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2892.pdf">N2892</a>);</li>
+      <li>compiler-side macros.</li>
+    </ul>
+    <p><sub>
+      Counterintuitively, according to vendors' experience, the implementation
+      of these features might be simpler than of statement expressions.
+    </sub></p>
+  </aside>
+
+  <h2>Potential wording</h2>
+  <div class="wording">
+    <div style="counter-reset: pars 1;">
+      <h4>6.8.7.3 The continue statement</h4>
+      <p>
+      A <code>continue</code> statement with an identifier operand shall appear
+      within <ins>the body of</ins> a statement named by the label with the
+      corresponding identifier.
+      </p>
+    </div>
+    <div style="counter-reset: pars 1;">
+      <h4>6.8.7.4 The break statement</h4>
+      <p>
+      A <code>break</code> statement with an identifier operand shall appear
+      within <ins>the body of</ins> a <del>switch or iteration</del> statement
+      named by the label with the corresponding identifier.
+      </p>
+    </div>
+    <ins style="counter-reset: pars 0;">
+      <h3>6.8.? Statement expression</h3>
+
+      <h4>Syntax</h4>
+
+      <p><i>
+        statement-expression:<br>
+        &ensp; ( compound-statement )
+      </i></p>
+
+      <h4>Description</h4>
+      <p>
+      A statement expression allows a block of statements to be treated as
+      an expression, enabling the evaluation of the last statement within
+      the block to yield a value.
+      </p>
+
+      <h4>Constraints</h4>
+
+      <p>
+      Jumps via <i>jumps statements</i> shall not enter into any <i>statement-expression</i>.
+      </p>
+
+      <p>
+      Jumps via <i>jumps statements</i> shall not exit <i>statement-expression</i>.
+      </p>
+
+      <h4>Semantics</h4>
+
+      <p>
+      Evaluation of a <i>statement-expression</i> is not interleaved with
+      the evaluation of other parts of the containing expression.
+      </p>
+
+      <p>
+      The value and type of <i>statement-expression</i> are the same as of
+      the last statement within its <i>compound-statement</i>, as if they were
+      returned via a <code>return</code> statement. <sup>1</sup>
+      </p>
+
+      <p>
+      If the <i>compound-statement</i> is empty, or its last statement is not
+      an expression, the <i>statement-expressions</i> is a void expressions.
+      </p>
+
+      <p>
+      Objects declared within the <i>compound-statement</i> have block scope,
+      and their lifetime is confined to the <i>statement-expression</i>.
+      </p>
+
+      <p>
+      For a <i>statement-expression</i> to be a constant expression<sup>2</sup>,
+      it can consists only of statements evaluated during translation
+      (like constant expressions, <code>contstexpr</code> declarations,
+      or <code>static_assert</code>).
+      </p>
+
+      <p>
+      EXAMPLE 1 &nbsp; Statement expression as function-like macro
+      </p>
+      <pre><code>
+      #define BIT(type, n) ({ \
+          static_assert(n >= 0 && n < sizeof(type) * CHAR_BIT); \
+          (type)1 << (n); \
+      })
+
+      int arr[BIT(unsigned int, 2)];
+      </code></pre>
+
+      <p>
+      EXAMPLE 2 &nbsp; Statement expression as constant expression
+      </p>
+      <pre><code>
+      unsigned char foo[({
+          static_assert(sizeof (int) >= 4);
+          constexpr auto s = sizeof (int);
+          10 * s;
+      })];
+      </code></pre>
+
+      <ol class="footnotes">
+        <li>
+          Requirements of F.6 may apply
+        </li>
+        <li>
+          Thus be eligible for use in file-scope initializations, static
+          assertions, or other contexts requiring translation-time evaluation.
+        </li>
+      </ol>
+
+    </ins>
+    <ins style="counter-reset: pars 0;">
+      <h3>J.5.? Jumping out of statement expression</h3>
+      <p>
+      Implementations may allow jumping out of statement expressions
+      via means of <i>jumps statements</i>.
+      </p>
+    </ins>
+  </div>
+
+  &nbsp;
+  <h1>References</h1>
+  <ul>
+    <li><a href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html">Statement Exprs (Using the GNU Compiler Collection (GCC))</a></li>
+    <li><a href="https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Statement-Exprs.html">Statement Exprs (GNU C Language Manual)</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3212.pdf">[N3212] Polymorphic Types</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2892.pdf">[N2892] Basic lambdas for C</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2924.pdf">[N2924] Type-generic lambdas</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3550.pdf">[N3550] ISO/IEC 9899:202y - public draft</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3637.pdf">[N3637] Static assertions in expressions, v2</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1229.pdf">[N1229] Potential Extensions For Inclusion In a Revision of ISO/IEC 9899</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2698.pdf">[N2698] Enabling Generic Functions and Parametric Types in C</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3389.htm">[N3389] TS 25007: C Extensions to Support Generalized Function Calls</a></li>
+    <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3582.pdf">[N3582] TS 25007 "C Extensions to Support Generalized Function Calls", committee draft</a></li>
+  </ul>
+
+  <hr>
+  <time style="float:right">2025-07-07</time>
+  <br>
+</body>
+</html>
+
+<!-- vim: set fdl=2: -->
