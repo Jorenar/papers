@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[N3642] Clarify terminology for obsolete features</title>
+  <meta name="author" content="Jakub Łukasiewicz">
+  <meta name="keywords" content="terminology,obsolete">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html {
+      background: #0d1117;
+    }
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      max-width: 768px;
+      text-align: justify;
+      margin: 20px auto;
+      font-size: 16px;
+      color: #eee;
+    }
+
+    a, a:visited {
+      color: inherit;
+    }
+
+    blockquote {
+      border-left: 2px solid;
+      padding-left: 7px;
+    }
+
+    aside {
+      opacity: 0.8;
+      font-size: 0.9em;
+      background: #222b30;
+      padding: 0.1em 1em;
+    }
+
+    code {
+      font-size: 0.85em;
+    }
+    pre > code {
+      display: block;
+      margin-top: -1.2em;
+    }
+    pre:has(> code) {
+      margin: 0;
+    }
+    pre:has(> code) + p {
+      margin-top: 0;
+    }
+
+    ins {
+      background: #030;
+      text-decoration: none;
+    }
+    del {
+      background: #800;
+      text-decoration: line-through;
+    }
+
+    .wording {
+      padding-left: 1em;
+    }
+    .wording > * {
+      padding-left: 2em;
+      padding-right: 1em;
+    }
+    .wording p:before {
+      display: inline-block;
+      width: 2.5ch;
+      margin-left: -3.5ch;
+      text-align: right;
+      font-size: 0.85em;
+      counter-increment: pars;
+      content: "" counter(pars) " ";
+    }
+    .wording :not(pre) > code {
+      font-weight: bold;
+    }
+    .wording > ins, .wording > del {
+      display: block;
+      padding-top: 0.1em;
+      padding-bottom: 0.1em;
+    }
+
+    .footnotes {
+      margin-top: 1em;
+      padding-left: 0;
+      font-size: 0.8em;
+      list-style-type: decimal;
+    }
+
+    .nobr {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>[N3642] Clarify terminology for obsolete features</h1>
+  <ul>
+    <li>Jakub Łukasiewicz; Motorola Solutions; Poland</li>
+    <li><time>2025-07-09</time></li>
+    <li>References:
+      <ul>
+        <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3550.pdf">N3550 Working Draft (Post Graz 2025)</a></li>
+        <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2804.pdf">N2804 Clarify the meaning of obsolescent</a></li>
+        <li><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2921.pdf">N2921 Revised Draft Minutes for 15 November – 19 November, 2021</a></li>
+        <li><a href="https://stackoverflow.com/q/9208091">The Difference Between Deprecated, Depreciated and Obsolete - Stack Overflow</a></li>
+        <li>Wikipedia:<ul>
+            <li><a href="https://en.wikipedia.org/wiki/Obsolescence">Obsolescence</a>,
+              <a href="https://en.wikipedia.org/wiki/Deprecation">Deprecation</a></li>
+          </ul>
+        </li>
+        <li>Merriam-Webster:<ul>
+            <li><a href="https://www.merriam-webster.com/dictionary/obsolescent">obsolescent</a>,
+              <a href="https://www.merriam-webster.com/dictionary/obsolete">obsolete</a>,
+              <a href="https://www.merriam-webster.com/dictionary/deprecated">deprecated</a></li>
+          </ul>
+        </li>
+        <li>Cambridge Dictionary:<ul>
+            <li><a href="https://dictionary.cambridge.org/dictionary/english/obsolescent">obsolescent</a>,
+              <a href="https://dictionary.cambridge.org/dictionary/english/obsolete">obsolete</a>,
+              <a href="https://dictionary.cambridge.org/dictionary/english/deprecated">deprecated</a></li>
+          </ul>
+        </li>
+        <li>Wiktionary:<ul>
+            <li><a href="https://en.wiktionary.org/wiki/obsolescent">obsolescent</a>,
+              <a href="https://en.wiktionary.org/wiki/obsolete">obsolete</a>,
+              <a href="https://en.wiktionary.org/wiki/deprecated">deprecated</a></li>
+            <li><a href="https://en.wiktionary.org/wiki/destandardize">destandardize</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Motivation</h2>
+  <p>
+  Mixing the terms "obsolete", "obsolescent", "deprecated", and "removed",
+  despite distinctions in their meanings, sends a confusing and inconsistent
+  message to the outside world, leading to misunderstandings even among
+  Committee members.
+  </p>
+  <p>
+  This paper aims to clarify the terminology by defining term "obsolete"
+  and the three categories of such state.
+  </p>
+  <p>
+  The Standard itself ought to use the precise categories. The word "obsolete"
+  is an umbrella term, already seen as <i>existing practice</i> in community
+  (see: <a href="https://en.cppreference.com/w/c/23.html#Obsolete_features">cppreference.com</a>,
+  <a href="https://en.wikipedia.org/wiki/C23_(C_standard_revision)#Obsolete_features">Wikipedia</a>),
+  which would also be useful for papers that put to a discussion the degree to which
+  a feature can be obsoleted (e.g. <a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3353.htm">N3353</a>).
+  As an added bonus, defining it highlights existence of a distinction between
+  "obsolete" and "obsolescent", which may not be clear to all readers otherwise.
+  </p>
+  <p>
+  As an additional option, there is also a proposition for a term "destandardized",
+  which would describe features no longer maintained by the Standard, but for reasons
+  other than being obsolete, and thus still possibly specified by supplementary
+  documents, or made available as extensions.
+  </p>
+  <p>
+  The proposed wording for all defined terms is intended to align with their
+  existing usage in the Standard, within the community, as well as common English.
+  </p>
+
+  <h2>Changes to wording</h2>
+  <div class="wording">
+    <h3>Introduction</h3>
+    <div style="counter-reset: pars 1;">
+      <p>
+      Certain <ins><i>obsolete</i> [3.?]</ins> features <del>are <i>obsolescent</i>,
+        which means that they could be considered for withdrawal in future revisions
+        of this document. They</del> are retained <del>because of their widespread
+        use</del> <ins>for compatibility reasons</ins>, but their use in new
+      implementations (for implementation features) or new programs (for
+      language [6.11] or library features [7.35]) is discouraged.
+      </p>
+    </div>
+
+    <h3>3. Terms, definitions, and symbols</h3>
+    <ins style="counter-reset: pars 0;">
+      <h4>3.?</h4>
+      <p>
+      <b>obsolete feature</b>
+      </p>
+      <p>
+      a feature being phased out of an active use (especially in new code)
+      </p>
+    </ins>
+    <ins style="counter-reset: pars 0;">
+      <h4>3.?.1</h4>
+      <p>
+      <b>obsolescent feature</b>
+      </p>
+      <p>
+      a feature discouraged from further use, usually in favor of a direct
+      alternative; retained primarily for backward compatibility with existing code
+      </p>
+    </ins>
+    <ins style="counter-reset: pars 0;">
+      <h4>3.?.2</h4>
+      <p>
+      <b>deprecated feature</b>
+      </p>
+      <p>
+      a feature recommended to be phased out of any usage; often considered
+      for withdrawal from future revisions of this document
+      </p>
+    </ins>
+    <ins style="counter-reset: pars 0;">
+      <h4>3.?.3</h4>
+      <p>
+      <b>removed feature</b>
+      </p>
+      <p>
+      a feature that is no longer part of the standard
+      </p>
+    </ins>
+  </div>
+
+  <h2>(optional) Definition of "destandardized"</h2>
+  <div class="wording">
+    <ins style="counter-reset: pars 0;">
+      <h3>3.?</h3>
+      <p>
+      <b>destandardized feature</b>
+      </p>
+      <p>
+      a feature no longer specified by the standard, but with possibility of
+      being offered as an extension, or described by a different document
+      </p>
+    </ins>
+  </div>
+
+  <h2>Polls</h2>
+  <ul>
+    <li>Does the C Committee want to adopt the provided definitions of terminology for obsolete features?</li>
+    <li>Does the C Committee want to adopt the definition of term "destandardized"?</li>
+  </ul>
+
+  &nbsp;
+</body>
+</html>
+
+<!-- vim: set fdl=2: -->
