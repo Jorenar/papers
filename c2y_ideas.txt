@@ -20,7 +20,7 @@
   * remove Annex K
     * https://stackoverflow.com/questions/50724726
     * https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1106.txt
-    * https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1967.htm
+    * https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1969.htm
     * https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2986.htm
 
         > Basic concerns boil down to: Martin's experiment was not a useful one
