@@ -8,16 +8,33 @@
   <meta name="keywords" content="statement,expressions,gnu,c,extension,standardization">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html {
-      background: #0d1117;
+    :root {
+      color-scheme: light dark;
+      --fg: #222222;
+      --bg: #fff6ee;
+      --bg-ins: #6dff6d;
+      --bg-del: #ff2626;
+      --bg-aside: #bbbbbb;
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #eeeeee;
+        --bg: #1c1b22;
+        --bg-ins: #003300;
+        --bg-del: #880000;
+        --bg-aside: #222b30;
+      }
+    }
+
     body {
+      background-color: var(--bg);
       font-family: Helvetica, Arial, sans-serif;
-      max-width: 900px;
+      max-width: 768px;
       text-align: justify;
       margin: 20px auto;
       font-size: 16px;
-      color: #eee;
+      color: var(--fg);
     }
 
     a, a:visited {
@@ -32,7 +49,7 @@
     aside {
       opacity: 0.8;
       font-size: 0.9em;
-      background: #222b30;
+      background-color: var(--bg-aside);
       padding: 0.1em 1em;
     }
 
@@ -51,24 +68,24 @@
     }
 
     ins {
-      background: #030;
+      background-color: var(--bg-ins);
       text-decoration: none;
     }
     del {
-      background: #800;
+      background-color: var(--bg-del);
       text-decoration: line-through;
     }
 
-    ins + ins, del + del, aside + aside {
-      margin-top: 0.5em;
-    }
-
     .wording {
+      border-left: 3px dotted grey;
       padding-left: 1em;
     }
     .wording > * {
       padding-left: 2em;
       padding-right: 1em;
+    }
+    .wording > h3 {
+      padding-left: 1.7em;
     }
     .wording p:before {
       display: inline-block;
